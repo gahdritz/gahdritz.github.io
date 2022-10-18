@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<script>
+function clickLink(selectedLink) {
+	document.querySelector(selectedLink).scrollIntoView({
+		behavior: 'smooth', 
+		block: 'start'}
+	);
+}
+</script>
+<html>
+  <head>
+  	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164960443-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-164960443-1');
+	</script>
+	<link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Arial:400,400i,500,500i,700" rel="stylesheet">
+ 	<meta name="google-site-verification" content="3HqwN4yVhcpcO5Tw3cBMnuju6q6_Xu3QaVSBZ7Xo9No"/>
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gustaf Ahdritz</title>
+	<link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+  </head>
+    <a id="home"></a>
+	<body>
+		<div class="pagematerial">
+			<div class = "title">
+				<div class="gap"></div>		
+                <nav>
+                	<div class="nav-wrapper">
+                        <div class="nav-center">
+                            <ul class="nav-element" id="nav-links">
+                                <li><a onclick="clickLink('#home');"><span>Home</span></a></li>
+                                <li><a onclick="clickLink('#papers');"><span>Papers</span></a></li>
+                                <li><a onclick="clickLink('#awards');"><span>Awards</span></a></li>
+                                <li><a onclick="clickLink('#links');"><span>Links</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+			</div>
+			<main class="page-content">
+				{{ content }}
+			</main>
+		</div>
+	</body>
+</html>
