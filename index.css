@@ -118,9 +118,9 @@ img.rounded { object-fit: cover; border-radius: 15%; width: 250px; height: 250px
 #home-title { font-weight: 750; margin-top: 0.5rem; margin-bottom: 0.4rem; line-height: 1.2; letter-spacing: -0.03rem; }
 
 #address { display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; font-style: normal; font-size: 16px; }
-.addr1::before { content: "gahdrit"}
-.addr2::before { content: "z\000040g.har"}
-.addr3::before { content: "vard.edu"}
+.addri::before { content: "gahdrit"}
+.addrj::before { content: "z\000040g.har"}
+.addrk::before { content: "vard.edu"}
 
 .text { flex-basis: 32rem; flex-grow: 1; max-width: 42rem; padding: 0 20px; }
 
