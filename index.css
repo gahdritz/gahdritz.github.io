@@ -394,6 +394,7 @@ h3 {
 @media (pointer:none), (pointer:coarse) {
     .header {
         flex-direction: column;
+        align-items: center;
     }
 }
 
