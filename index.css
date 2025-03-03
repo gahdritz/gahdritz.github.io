@@ -86,7 +86,7 @@ nav {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    gap: 3rem;
+    gap: 2rem;
     margin-top: var(--nav-height);
 }
 
@@ -163,6 +163,16 @@ h1 {
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: var(--dark-gray);
+}
+
+h1::after {
+    content: '';
+    position: relative;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--crimson);
 }
 
 .section {
