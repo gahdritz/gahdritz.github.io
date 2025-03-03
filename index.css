@@ -329,6 +329,7 @@ h3 {
 
 .teaching-list, .awards-list {
     list-style: none;
+    font-size: 1rem;
 }
 
 .teaching-list li, .awards-list li {
