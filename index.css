@@ -387,13 +387,9 @@ h3 {
         gap: 1rem;
     }
 
-    .teaching-list, .awards-list {
-        font-size: 0.5rem;
-    }
-
     /* Fix alignment with bullet points */
     .teaching-list li::before, .awards-list li::before {
-        top: 0.5rem; /* Adjust this value as needed */
+        top: 0.55rem; /* Adjust this value as needed */
     }
 }
 
