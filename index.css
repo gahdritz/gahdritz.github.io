@@ -327,7 +327,6 @@ h3 {
 
 .teaching-list, .awards-list {
     list-style: none;
-    font-size: 1rem;
 }
 
 .teaching-list li, .awards-list li {
@@ -386,6 +385,10 @@ h3 {
 
     .nav-links {
         gap: 1rem;
+    }
+
+    .teaching-list, .awards-list {
+        font-size: 0.5rem;
     }
 }
 
