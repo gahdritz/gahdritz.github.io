@@ -393,3 +393,6 @@ h3 {
     }
 }
 
+.addri::before { content: "gahdrit"}
+.addrj::before { content: "z\000040g.har"}
+.addrk::before { content: "vard.edu"}
