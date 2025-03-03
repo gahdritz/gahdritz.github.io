@@ -173,7 +173,6 @@ h2 {
     margin-bottom: 1.5rem;
     color: var(--dark-gray);
     position: relative;
-    display: inline-block;
 }
 
 h2::after {
