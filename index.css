@@ -104,6 +104,7 @@ nav {
     align-self: flex-start;
     padding-top: 0;
     margin-top: 0;
+    font-size: 1.2rem;
 }
 
 /* Remove margin from first paragraph in bio */
@@ -354,7 +355,7 @@ h3 {
 }
 
 /* Mobile styles */
-@media (max-width: 768px) {
+@media (max-width: 850px) {
     .header {
         flex-direction: column;
         align-items: center;
@@ -389,6 +390,10 @@ h3 {
     .teaching-list li::before, .awards-list li::before {
         top: 0.55rem; /* Adjust this value as needed */
     }
+}
+
+.float-left {
+    float: left !important;
 }
 
 .addri::before { content: "gahdrit"}
