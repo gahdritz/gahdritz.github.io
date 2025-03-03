@@ -1,3 +1,6 @@
 _site
+.sass-cache
 .jekyll-cache
-run_locally.sh
+.jekyll-metadata
+vendor
+Gemfile.lock
