@@ -165,16 +165,6 @@ h1 {
     color: var(--dark-gray);
 }
 
-h1::after {
-    content: '';
-    position: relative;
-    bottom: -8px;
-    left: 0;
-    width: 40px;
-    height: 3px;
-    background-color: var(--crimson);
-}
-
 .section {
     margin: 3rem 0;
 }
