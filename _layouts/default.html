@@ -1,32 +1,22 @@
-<!DOCTYPE html>
-<script>
-function clickLink(selectedLink) {
-	document.querySelector(selectedLink).scrollIntoView({
-		behavior: 'smooth', 
-		block: 'start'}
-	);
-}
-</script>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <!--Prevent section IDs from getting stuck in the URL-->
-    <script>
-        window.history.replaceState({}, document.title, window.location.pathname);
-    </script>
-  	<!-- Global site tag (gtag.js) - Google Analytics -->
-    <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.googleapis.com/css?family=Arial:400,400i,500,500i,700" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f2eb">
+    <meta name="description" content="Gustaf Ahdritz is a PhD student in Computer Science at Harvard researching uncertainty in machine learning and large language models.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gustaf Ahdritz · Harvard Computer Science">
+    <meta property="og:description" content="Research on uncertainty in machine learning and large language models.">
+    <meta property="og:url" content="https://gahdritz.github.io/">
+    <title>Gustaf Ahdritz · Harvard Computer Science</title>
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <title>Gustaf Ahdritz | Harvard CS</title>
-	<meta name="description" content="Gustaf Ahdritz's homepage">
-	<link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/index.css">
   </head>
-    <a id="home"></a>
-	<body>
-            <main class="page-content">
-                {{ content }}
-	    </main>
-	</body>
+  <body>
+    {{ content }}
+  </body>
 </html>

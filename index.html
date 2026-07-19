@@ -1,215 +1,274 @@
---- 
-layout: default 
---- 
-<nav>
+---
+layout: default
+---
+<style>
+  /* Keep the opening view compact enough to reveal the About section. */
+  .hero {
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 18px 0 38px !important;
+    grid-template-columns: 190px minmax(0, 1fr) !important;
+    gap: clamp(24px, 3vw, 42px) !important;
+  }
+
+  .hero-portrait {
+    width: 190px !important;
+    max-width: 190px !important;
+    height: 205px !important;
+  }
+
+  .hero-portrait img {
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: auto !important;
+    object-fit: cover !important;
+    object-position: 50% 38% !important;
+  }
+
+  .hero h1 {
+    margin: 0 0 10px !important;
+    font-size: clamp(46px, 5.2vw, 68px) !important;
+    line-height: 0.82 !important;
+  }
+
+  .intro.section-rule {
+    padding-top: 22px !important;
+  }
+
+  @media (max-width: 860px) {
+    .hero {
+      grid-template-columns: 165px minmax(0, 1fr) !important;
+      gap: 18px !important;
+    }
+
+    .hero-portrait {
+      width: 165px !important;
+      max-width: 165px !important;
+      height: 178px !important;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 7vw, 54px) !important;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .hero {
+      padding: 14px 0 34px !important;
+      grid-template-columns: 110px minmax(0, 1fr) !important;
+      gap: 24px !important;
+      align-items: center !important;
+    }
+
+    .hero-portrait {
+      width: 110px !important;
+      max-width: 110px !important;
+      height: 118px !important;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 9vw, 44px) !important;
+    }
+
+    .contact-row {
+      gap: 6px 14px !important;
+    }
+
+    .email-link {
+      flex-basis: auto !important;
+      margin: 0 !important;
+    }
+  }
+</style>
+<nav class="site-nav" aria-label="Primary navigation">
   <div class="nav-container">
-    <div class="nav-name"></div>
+    <a class="nav-name" href="#about" aria-label="Gustaf Ahdritz, home">
+      <img src="/assets/seas-shield.png" alt="" width="37" height="43">
+    </a>
     <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#papers">Papers</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#awards">Awards</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
     </div>
   </div>
 </nav>
-<div class="container">
-  <header class="header" id="about">
-    <div class="profile-container float-left">
-      <img src="/assets/gustaf.jpg" alt="Gustaf Ahdritz" class="profile-image">
-      <div class="name-email">
-        <h1>Gustaf Ahdritz</h1>
-        <address class="address">
-           <div><span class="addri"></span></div>
-           <span class="addrj"></span>
-           <div><span class="addrk"></span></div>
-        </address>
-      </div>
+
+<main>
+  <header class="hero" id="about">
+    <div class="hero-portrait">
+      <img src="/assets/gustaf.jpg" alt="Portrait of Gustaf Ahdritz" width="520" height="520">
     </div>
-    <div class="bio-container">
-      <div class="bio">
-        <p>I'm a fourth-year PhD student in Computer Science at Harvard University. I'm a member of the <a href="https://mlfoundations.org">Machine Learning Foundations Group</a> and am advised by <a href="https://boazbarak.org">Boaz&nbsp;Barak</a>. I'm supported by a fellowship from Harvard's <a href="https://www.harvard.edu/kempner-institute/">Kempner Institute</a>. </p>
-        <br>
-        <p>My primary research interest at the moment is uncertainty quantification, especially for large language models in realistic, unconstrained settings. Highlights include a new approach for automatically generating uncertainty labels in unconstrained text at scale, a rigorous framework for evaluating and improving uncertainty decompositions, and a general technique for enhancing uncertainty estimates for long-form LLM generations. Along the way, I've also worked on enabling real-time interactivity in LLMs and a benchmark measuring their ability to screen out untrustworthy information.</p>
-        <br>
-        <p>I interned at Meta in 2025 (working with Todor Mihaylov) and at Apple the previous year (Parikshit Gopalan, Udi Wieder, Moises Goldszmidt, and Anatoly Adamov (et al.)). Before that, I graduated from Columbia with a B.A. in Computer Science &amp; History (2020) and an M.S. in Computer Science (2021). There, I worked with <a href="https://aqlab.io">Mohammed AlQuraishi</a> on the applied task of protein structure prediction and led the development of <a href="https://www.github.com/aqlaboratory/openfold">OpenFold</a>.</p>
-      </div>
-      <div class="links">
-        <a href="/assets/cv.pdf" class="paper-link">CV</a>
-        <a href="https://github.com/gahdritz" class="paper-link">GitHub</a>
-        <a href="https://scholar.google.com/citations?user=oCO_ClkAAAAJ&hl=en&oi=ao" class="paper-link">Google Scholar</a>
-        <a href="https://twitter.com/gahdritz" class="paper-link">Twitter</a>
+    <div class="hero-copy">
+      <h1>Gustaf<br>Ahdritz</h1>
+      <div class="contact-row" aria-label="Profile links">
+        <a href="/assets/cv.pdf">CV</a>
+        <a href="https://scholar.google.com/citations?user=oCO_ClkAAAAJ&hl=en&oi=ao">Scholar</a>
+        <a href="https://github.com/gahdritz">GitHub</a>
+        <a href="https://twitter.com/gahdritz">X / Twitter</a>
+        <a class="email-link" id="email-link" href="#" rel="nofollow">Email</a>
       </div>
     </div>
   </header>
-  <section class="section" id="papers">
-    <h2>Papers</h2>
-    <h3>Preprints</h3>
-    <div class="paper-cards">
-      <div class="paper-card">
-        <div class="paper-card-image">
-          <img src="/assets/papers/rtic.jpg" alt="Real-Time Interactive Conversations">
-        </div>
-        <div class="badges">
-          <div class="badge badge-preprint">Preprint</div>
-        </div>
-        <div class="paper-title">Modeling Real-Time Interactive Conversations as Timed Diarized Transcripts</div>
-        <div class="authors">*Garrett Tanzer, *<strong>Gustaf Ahdritz</strong>, Luke Melas-Kyriazi </div>
-        <div class="paper-date">2024</div>
-        <div class="tldr">Carefully sampling from language models trained directly on timed, diarized transcripts (e.g. instant messenger logs) permits true real-time interactivity.</div>
-        <div class="paper-links">
-          <a href="https://arxiv.org/abs/2405.13203" class="paper-link">Paper</a>
-          <a href="https://github.com/gahdritz/rtic" class="paper-link">Code</a>
-          <a href="https://x.com/gahdritz/status/1797734092806717719" class="paper-link">Tweetorial</a>
-          <a href="/bibtex/rtic.bib" class="paper-link">BibTex</a>
-        </div>
-      </div>
-    </div>
-    <h3>Conference Papers</h3>
-    <div class="paper-cards">
-     <div class="paper-card">
-        <div class="paper-card-image">
-          <img src="/assets/papers/provable_decomp.jpg" alt="Higher-Order Calibration">
-        </div>
-        <div class="badges">
-          <div class="badge badge-conference">ICLR</div>
-          <div class="badge badge-award">Spotlight</div>
-        </div>
-        <div class="paper-title">Provable Uncertainty Decomposition via Higher-Order Calibration</div>
-        <div class="authors">
-          <strong>Gustaf Ahdritz</strong>, Aravind Gollakota, Parikshit Gopalan, Charlotte Peale, Udi Wieder (α)
-        </div>
-        <div class="paper-date">2024</div>
-        <div class="tldr">We define higher-order calibration, which turns out to be a necessary and sufficient condition for accurate uncertainty decomposition.</div>
-        <div class="paper-links">
-          <a href="https://openreview.net/forum?id=TId1SHe8JG" class="paper-link">Paper</a>
-          <a href="/bibtex/hoc.bib" class="paper-link">BibTeX</a>
-          <a href="https://x.com/gahdritz/status/1876346358535421954" class="paper-link">Tweetorial</a>
-        </div>
-      </div>
 
-      <div class="paper-card">
-        <div class="paper-card-image">
-          <img src="/assets/papers/distinguishing.jpg" alt="Distinguishing Knowable from Unknowable">
-        </div>
-        <div class="badges">
-          <div class="badge badge-conference">ICML</div>
-        </div>
-        <div class="paper-title">Distinguishing the Knowable from the Unknowable with Language Models</div>
-        <div class="authors">*<strong>Gustaf Ahdritz</strong>, *Tian Qin, Nikhil Vyas, Boaz Barak, Benjamin L. Edelman </div>
-        <div class="paper-date">2024</div>
-        <div class="tldr">Linear probes of language model activations can predict when the predictive entropy of much larger and more knowledgeable models is close to zero, and they even work out-of-distribution!</div>
-        <div class="paper-links">
-          <a href="https://icml.cc/virtual/2024/poster/32819" class="paper-link">Paper</a>
-          <a href="https://github.com/gahdritz/llm_uncertainty" class="paper-link">Code</a>
-          <a href="https://x.com/gahdritz/status/1780618634832036174" class="paper-link">Tweetorial</a>
-          <a href="/bibtex/distinguishing.bib" class="paper-link">BibTex</a>
-        </div>
-      </div>
-      <div class="paper-card">
-        <div class="paper-card-image">
-          <img src="/assets/papers/openproteinset.jpg" alt="OpenProteinSet">
-        </div>
-        <div class="badges">
-          <div class="badge badge-conference">NeurIPS</div>
-        </div>
-        <div class="paper-title">OpenProteinSet: Training data for structural biology at scale</div>
-        <div class="authors">
-          <strong>Gustaf Ahdritz</strong>, Nazim Bouatta, Sachin Kadyan, Lukas Jarosch, Daniel Berenberg, Ian Fisk, et al.
-        </div>
-        <div class="paper-date">2023</div>
-        <div class="tldr">We present the largest open repository of precomputed multiple sequence alignments (MSAs) of proteins, representing millions of compute hours.</div>
-        <div class="paper-links">
-          <a href="https://neurips.cc/virtual/2023/poster/73507" class="paper-link">Paper</a>
-          <a href="https://registry.opendata.aws/openfold/" class="paper-link">Data</a>
-          <a href="/bibtex/openproteinset.bib" class="paper-link">BibTeX</a>
-        </div>
-      </div>
-      <div class="paper-card">
-        <div class="paper-card-image">
-          <img src="/assets/papers/soft_prompts.jpg" alt="Soft Prompting">
-        </div>
-        <div class="badges">
-          <div class="badge badge-conference">ICML Workshop</div>
-        </div>
-        <div class="paper-title">Soft prompting might be a bug, not a feature</div>
-        <div class="authors">*Luke Bailey, *<strong>Gustaf Ahdritz</strong>, *Anat Kleiman, Siddharth Swaroop, Finale Doshi-Velez, Weiwei Pan </div>
-        <div class="paper-date">2023</div>
-        <div class="tldr">Contrary to prior speculation, we find that soft prompts (created with "prompt-" or "prefix-tuning") differ from natural token embeddings in key ways, complicating attempts to decode them back into natural language.</div>
-        <div class="paper-links">
-          <a href="https://openreview.net/forum?id=MHWDdMEJ5s" class="paper-link">Paper</a>
-          <a href="/bibtex/soft_prompts.bib" class="paper-link">BibTeX</a>
-        </div>
-      </div>
+  <section class="intro section-rule" id="research">
+    <div class="section-label">
+      <span>01</span>
+      <h2>About</h2>
     </div>
-    <h3>Journal papers</h3>
-    <div class="paper-cards">
-      <div class="paper-card">
-        <div class="paper-card-image">
-          <img src="/assets/papers/openfold.jpg" alt="OpenFold">
-        </div>
-        <div class="badges">
-          <div class="badge badge-journal">Nature Methods</div>
-        </div>
-        <div class="paper-title">OpenFold: Retraining AlphaFold2 yields new insights into its learning mechanisms and capacity for generalization</div>
-        <div class="authors">*<strong>Gustaf Ahdritz</strong>, *Nazim Bouatta, Christina Floristean, Sachin Kadyan, Qinghui Xia, William Gerecke, et al. </div>
-        <div class="paper-date">2024</div>
-        <div class="tldr">We created the first trainable, open-source reproduction of AlphaFold2 and used it to study how the model learns to fold.</div>
-        <div class="paper-links">
-          <a href="https://www.nature.com/articles/s41592-024-02272-z" class="paper-link">Paper</a>
-          <a href="https://www.github.com/aqlaboratory/openfold" class="paper-link">Code</a>
-          <a href="https://www.youtube.com/watch?v=W92xVnUMkU0" class="paper-link">Talk</a>
-          <a href="/bibtex/openfold.bib" class="paper-link">BibTex</a>
-        </div>
-      </div>
-      <div class="paper-card">
-        <div class="paper-card-image">
-          <img src="/assets/papers/rgn2.jpg" alt="Single-sequence protein structure prediction">
-        </div>
-        <div class="badges">
-          <div class="badge badge-journal">Nature Biotechnology</div>
-        </div>
-        <div class="paper-title">Single-sequence protein structure prediction using a language model and deep learning</div>
-        <div class="authors">*Ratul Chowdhury, *Nazim Bouatta, *Surojit Biswas, *Christina Floristean, Anant Kharkar, <strong>Gustaf Ahdritz</strong>, et al. </div>
-        <div class="paper-date">2022</div>
-        <div class="tldr">We present RGN2, an end-to-end "single-sequence" protein structure prediction model that relies on a small protein language model rather than multiple sequence alignments.</div>
-        <div class="paper-links">
-          <a href="https://www.nature.com/articles/s41587-022-01432-w" class="paper-link">Paper</a>
-          <a href="https://www.github.com/aqlaboratory/rgn2" class="paper-link">Code</a>
-          <a href="/bibtex/rgn2.bib" class="paper-link">BibTeX</a>
-        </div>
-      </div>
+    <div class="prose">
+      <p>I’m a PhD student in Computer Science at Harvard University, entering my fifth year in fall 2026. I’m a member of the <a href="https://mlfoundations.org">Machine Learning Foundations Group</a>, advised by <a href="https://boazbarak.org">Boaz Barak</a>, and supported by a graduate fellowship from Harvard’s <a href="https://www.harvard.edu/kempner-institute/">Kempner Institute</a>.</p>
+      <p>My primary research interest at the moment is uncertainty quantification, especially for large language models in realistic, unconstrained settings. Highlights include a new approach for automatically generating uncertainty labels in unconstrained text at scale, a rigorous framework for evaluating and improving uncertainty decompositions, and a general technique for enhancing uncertainty estimates for long-form LLM generations. Along the way, I've also worked on enabling real-time interactivity in LLMs and a benchmark measuring their ability to screen out untrustworthy information.</p>
+      <p>Previously, I interned at Meta in 2025 and Apple in 2024. I earned a B.A. in Computer Science and History (2020) and an M.S. in Computer Science (2021) from Columbia, where I worked with <a href="https://aqlab.io">Mohammed AlQuraishi</a> on protein structure prediction and led the development of <a href="https://github.com/aqlaboratory/openfold">OpenFold</a>.</p>
     </div>
   </section>
-  <section class="section" id="teaching">
-    <h2>Teaching</h2>
-    <p>I've served as a teaching fellow/assistant for the following courses at Harvard and Columbia:</p>
-    <ul class="teaching-list">
-      <li>
-        <em>Spring 2023</em>: Foundations of Deep Learning (Harvard COMPSCI 229br) with Boaz Barak
-      </li>
-      <li>
-        <em>Spring 2019 - Spring 2021</em>: Advanced Programming (Columbia COMS 3157) with Jae Woo Lee
-      </li>
-    </ul>
+
+  <section class="publications section-rule" id="publications">
+    <div class="section-heading">
+      <div class="section-label">
+        <span>02</span>
+        <h2>Selected publications</h2>
+      </div>
+      <a class="section-link" href="https://scholar.google.com/citations?user=oCO_ClkAAAAJ&hl=en&oi=ao">All on Google Scholar ↗</a>
+    </div>
+
+    <article class="publication featured-publication">
+      <div class="publication-visual">
+        <img src="/assets/papers/smel.png" alt="The SMeL Test" loading="lazy">
+      </div>
+      <div class="publication-body">
+        <div class="publication-meta"><span>Preprint</span><time datetime="2025">2025</time></div>
+        <h3><a href="https://arxiv.org/abs/2508.02074">The SMeL Test: A simple benchmark for media literacy in language models</a></h3>
+        <p class="authors"><strong>Gustaf Ahdritz</strong>, Anat Kleiman</p>
+        <p class="summary">A minimal benchmark showing that even strong language models struggle to filter untrustworthy and fictional information from context.</p>
+        <div class="publication-links">
+          <a href="https://arxiv.org/abs/2508.02074">Paper</a>
+          <a href="https://huggingface.co/datasets/gahdritz/smel">Data</a>
+          <a href="https://x.com/gahdritz/status/1952747816012624021">Thread</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="publication">
+      <div class="publication-visual"><img src="/assets/papers/provable_decomp.jpg" alt="Visualization from Provable Uncertainty Decomposition" loading="lazy"></div>
+      <div class="publication-body">
+        <div class="publication-meta"><span>ICLR · Spotlight</span><time datetime="2025">2025</time></div>
+        <h3><a href="https://openreview.net/forum?id=TId1SHe8JG">Provable Uncertainty Decomposition via Higher-Order Calibration</a></h3>
+        <p class="authors"><strong>Gustaf Ahdritz</strong>, Aravind Gollakota, Parikshit Gopalan, Charlotte Peale, Udi Wieder <span class="note">(alphabetical)</span></p>
+        <p class="summary">Higher-order calibration provides a necessary and sufficient condition for uncertainty decompositions with real-world semantics.</p>
+        <div class="publication-links">
+          <a href="https://openreview.net/forum?id=TId1SHe8JG">Paper</a>
+          <a href="/bibtex/hoc.bib">BibTeX</a>
+          <a href="https://x.com/gahdritz/status/1876346358535421954">Thread</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="publication">
+      <div class="publication-visual"><img src="/assets/papers/distinguishing.jpg" alt="Visualization from Distinguishing the Knowable from the Unknowable" loading="lazy"></div>
+      <div class="publication-body">
+        <div class="publication-meta"><span>ICML</span><time datetime="2024">2024</time></div>
+        <h3><a href="https://proceedings.mlr.press/v235/ahdritz24a.html">Distinguishing the Knowable from the Unknowable with Language Models</a></h3>
+        <p class="authors"><strong>Gustaf Ahdritz</strong>*, Tian Qin*, Nikhil Vyas, Boaz Barak, Benjamin L. Edelman</p>
+        <p class="summary">Small linear probes can predict when much larger language models will be confident—even out of distribution.</p>
+        <div class="publication-links">
+          <a href="https://proceedings.mlr.press/v235/ahdritz24a.html">Paper</a>
+          <a href="https://github.com/KempnerInstitute/llm_uncertainty">Code</a>
+          <a href="/bibtex/distinguishing.bib">BibTeX</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="publication">
+      <div class="publication-visual"><img src="/assets/papers/rtic.jpg" alt="Visualization from Modeling Real-Time Interactive Conversations" loading="lazy"></div>
+      <div class="publication-body">
+        <div class="publication-meta"><span>Preprint</span><time datetime="2024">2024</time></div>
+        <h3><a href="https://arxiv.org/abs/2405.13203">Modeling Real-Time Interactive Conversations as Timed Diarized Transcripts</a></h3>
+        <p class="authors">Garrett Tanzer*, <strong>Gustaf Ahdritz</strong>*, Luke Melas-Kyriazi</p>
+        <p class="summary">Language models trained on timed, diarized transcripts can support genuinely real-time text and spoken interaction.</p>
+        <div class="publication-links">
+          <a href="https://arxiv.org/abs/2405.13203">Paper</a>
+          <a href="https://github.com/gahdritz/rtic">Code</a>
+          <a href="/bibtex/rtic.bib">BibTeX</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="publication">
+      <div class="publication-visual"><img src="/assets/papers/openfold.jpg" alt="OpenFold protein structure visualization" loading="lazy"></div>
+      <div class="publication-body">
+        <div class="publication-meta"><span>Nature Methods</span><time datetime="2024">2024</time></div>
+        <h3><a href="https://www.nature.com/articles/s41592-024-02272-z">OpenFold: Retraining AlphaFold2 yields new insights into its learning mechanisms and capacity for generalization</a></h3>
+        <p class="authors"><strong>Gustaf Ahdritz</strong>*, Nazim Bouatta*, Christina Floristean, Sachin Kadyan, Qinghui Xia, William Gerecke, et al.</p>
+        <p class="summary">The first trainable, open-source reproduction of AlphaFold2—and a platform for studying how the model learns to fold proteins.</p>
+        <div class="publication-links">
+          <a href="https://www.nature.com/articles/s41592-024-02272-z">Paper</a>
+          <a href="https://github.com/aqlaboratory/openfold">Code</a>
+          <a href="/bibtex/openfold.bib">BibTeX</a>
+        </div>
+      </div>
+    </article>
+
+    <details class="archive">
+      <summary>Earlier work <span>3 publications</span></summary>
+      <div class="archive-list">
+        <article>
+          <div><span>NeurIPS Datasets &amp; Benchmarks</span><time datetime="2023">2023</time></div>
+          <h3><a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/0eb82171240776fe19da498bef3b1abe-Abstract-Datasets_and_Benchmarks.html">OpenProteinSet: Training data for structural biology at scale</a></h3>
+          <p><strong>Gustaf Ahdritz</strong>, Nazim Bouatta, Sachin Kadyan, Lukas Jarosch, Daniel Berenberg, Ian Fisk, et al.</p>
+        </article>
+        <article>
+          <div><span>ICML Workshop</span><time datetime="2023">2023</time></div>
+          <h3><a href="https://openreview.net/forum?id=MHWDdMEJ5s">Soft prompting might be a bug, not a feature</a></h3>
+          <p>Luke Bailey*, <strong>Gustaf Ahdritz</strong>*, Anat Kleiman*, Siddharth Swaroop, Finale Doshi-Velez, Weiwei Pan</p>
+        </article>
+        <article>
+          <div><span>Nature Biotechnology</span><time datetime="2022">2022</time></div>
+          <h3><a href="https://www.nature.com/articles/s41587-022-01432-w">Single-sequence protein structure prediction using a language model and deep learning</a></h3>
+          <p>Ratul Chowdhury*, Nazim Bouatta*, Surojit Biswas*, Christina Floristean*, Anant Kharkar, <strong>Gustaf Ahdritz</strong>, et al.</p>
+        </article>
+      </div>
+    </details>
+    <p class="publication-note">* Equal contribution.</p>
   </section>
-  <section class="section" id="awards">
-    <h2>Awards & Fellowships</h2>
-    <ul class="awards-list">
-      <li>
-        <em>2023 - 2028</em>: <a href="https://www.harvard.edu/kempner-institute/2023/05/31/kempner-institute-announces-recipients-of-inaugural-graduate-student-fellowships/">Kempner Institute Graduate Fellowship</a> (Kempner Institute, Harvard)
-      </li>
-      <li>
-        <em>2022 - 2028</em>: <a href="https://ashfordfellows.fas.harvard.edu/about">Ashford Fellowship</a> (Harvard)
-      </li>
-      <li>
-        <em>2020</em>: Andrew P. Kosoresow Memorial Award for Excellence in Teaching and Service (Columbia SEAS)
-      </li>
-      <li>
-        <em>2019</em>: Dean Hawkes Memorial Prize (Columbia College)
-      </li>
-    </ul>
+
+  <section class="experience section-rule" id="experience">
+    <div class="section-label">
+      <span>03</span>
+      <h2>Experience &amp; recognition</h2>
+    </div>
+    <div class="experience-columns">
+      <div>
+        <h3>Teaching</h3>
+        <dl>
+          <div><dt>2023</dt><dd>Foundations of Deep Learning<br><span>Harvard COMPSCI 229br</span></dd></div>
+          <div><dt>2019–21</dt><dd>Advanced Programming<br><span>Columbia COMS 3157</span></dd></div>
+        </dl>
+      </div>
+      <div>
+        <h3>Awards &amp; fellowships</h3>
+        <dl>
+          <div><dt>2023–28</dt><dd><a href="https://www.harvard.edu/kempner-institute/2023/05/31/kempner-institute-announces-recipients-of-inaugural-graduate-student-fellowships/">Kempner Institute Graduate Fellowship</a></dd></div>
+          <div><dt>2022–28</dt><dd><a href="https://ashfordfellows.fas.harvard.edu/about">Harvard Ashford Fellowship</a></dd></div>
+          <div><dt>2020</dt><dd>Kosoresow Memorial Award</dd></div>
+          <div><dt>2019</dt><dd>Dean Hawkes Memorial Prize</dd></div>
+        </dl>
+      </div>
+    </div>
   </section>
-</div>
+</main>
+
 <footer class="footer">
-  <p>Last updated: March 2025</p>
+  <p>Gustaf Ahdritz</p>
+  <p>Cambridge, Massachusetts · Updated July 2026</p>
 </footer>
+<script>
+  (() => {
+    const link = document.getElementById("email-link");
+    const codes = [103, 97, 104, 100, 114, 105, 116, 122, 64, 103, 46, 104, 97, 114, 118, 97, 114, 100, 46, 101, 100, 117];
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      const address = String.fromCharCode(...codes);
+      window.location.href = "mailto:" + address;
+    });
+  })();
+</script>
